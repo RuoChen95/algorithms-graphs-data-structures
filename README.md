@@ -8,7 +8,7 @@ Course can be found in [Coursera](https://www.coursera.org/learn/algorithms-grap
   - 10: Graph Search and Connectivity
     - 广度优先搜索
     - 深度优先搜索
-    - 强连通分量（深度优先搜索的应用）
+    - 强连通分量（Kosaraju算法）
 - Week 2:
   - 11: Dijkstra's Shortest-Path Algorithm
 - Week 3:
