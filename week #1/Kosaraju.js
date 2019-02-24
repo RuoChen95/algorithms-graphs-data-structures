@@ -2,15 +2,28 @@
 
 let rs = require("fs");
 
-let data = rs.readFileSync("SCC.txt","utf-8");
-
-let G = data.split('\n');
+// let data = rs.readFileSync("SCC.txt","utf-8");
+// let G = data.split('\n');
+let data = rs.readFileSync("testcase_1.txt","utf-8");
+let G = data.split('\n\n');
 
 for (let i = 0; i < G.length; i++) {
   G[i] = G[i].split(' ').map(function (n, index) {
     return parseInt(n)
   })
 }
+
+let pivotArray = []
+for (let i = 0; i < G.length; i ++) {
+  if (pivotArray.indexOf(G[i][0]) == -1) {
+    pivotArray.push(G[i][0])
+  }
+  if (pivotArray.indexOf(G[i][1]) == -1) {
+    pivotArray.push(G[i][1])
+  }
+}
+console.log('length', pivotArray.length)
+console.log('last one', pivotArray.sort((a, b) => a - b)[pivotArray.length-1])
 
 let exposedVertex = []
 let orderList = []
@@ -21,11 +34,7 @@ let leaderArray = []
 function DFS(G, i) {
   exposedVertex.push(i)
 
-
   leaderArray[i] = s
-
-
-
 
   for (let n = 0; n < G.length; n++) {
     if (G[n][0] == i) {
@@ -46,13 +55,11 @@ let t = 0
 let s = 0
 function DFS_loop(G) {
   // 总共顶点的数量
-  let n = 9
+  let n = pivotArray.sort((a, b) => a - b)[pivotArray.length-1]
   for (let i = n; i >= 1; i--) {
     // 如果顶点i没有被搜索过的话
     if (exposedVertex.indexOf(i) == -1) {
       s = i
-      // console.log('s', s)
-      // 从最大的开始遍历
       DFS(G, i)
     }
   }
@@ -63,22 +70,28 @@ let Grev = G.map(function(element) {
   return [element[1],element[0]]
 })
 
-// console.log('G:', G)
-// console.log('Grev:', Grev)
-// 在图Grev中运行深度算法循环
+console.log(1)
 DFS_loop(Grev)
+console.log(2)
 
 let newG = G.map(function(n) {
   return [formationList[n[0]], formationList[n[1]]]
 })
 
-
-
-// console.log(G)
-// console.log('formation', formationList)
-// console.log(newG)
-
-
+// 数据的初始化
 exposedVertex = []
 DFS_loop(newG)
-console.log(leaderArray.sort())
+let results = []
+for (let i = 1; i < leaderArray.length; i++) {
+  if(results[leaderArray[i]] == undefined) {
+    results[leaderArray[i]] = 1
+  } else {
+    results[leaderArray[i]]++
+  }
+}
+results = results.filter(function(n) {
+  if (typeof n !== 'undefined') {
+    return Number(n)
+  }
+})
+console.log(results.sort((a, b) => a - b).reverse())
