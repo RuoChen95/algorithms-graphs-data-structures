@@ -42,10 +42,39 @@ inputEdges = inputEdges.map(function (n) {
     return parseInt(m)
   })
 })
-console.log(inputVertices)
-console.log(inputEdges)
+console.log('inputVertices', inputVertices)
+console.log('inputEdges', inputEdges)
 
 /*
 **** Dijkstra's Algorithm ****
 *
 */
+let proceedVertices = [];
+let distanceList = [];
+// let pathList = [];
+
+proceedVertices.push(inputEdges[0][0]);
+distanceList[inputEdges[0][0]] = 0;
+
+minIndex = 0;
+
+// while (proceedVertices.length !== inputVertices.length) {
+  pathList = []
+  for (let i = 0; i < inputEdges.length; i++) {
+    if (proceedVertices.indexOf(inputEdges[i][0]) != -1 && proceedVertices.indexOf(inputEdges[i][1] == -1)) {
+      // pick the one that minimizes the path
+      // console.log(distanceList[inputEdges[i][0]])
+      // console.log(inputEdges[i][2])
+      pathList.push([distanceList[inputEdges[i][0]] + inputEdges[i][2], i])
+    }
+  }
+  // 0: 长度； 1: 相对于inputEdges的编号
+  minIndex = pathList.sort(function(a,b) {return a[0] - b[0]})[0][1];
+  console.log(minIndex);
+
+  proceedVertices.push(inputEdges[minIndex][1]);
+  distanceList[inputEdges[minIndex][1]] = pathList[0][0];
+
+  console.log(proceedVertices);
+  console.log(distanceList);
+// }
