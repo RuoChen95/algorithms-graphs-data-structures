@@ -1,6 +1,10 @@
 # algorithms-graphs-data-structures
 
-Course can be found in [Coursera](https://www.coursera.org/learn/algorithms-graphs-data-structures) which is part II of [specializations of algorithms](https://www.coursera.org/specializations/algorithms).
+This is Ruochen Xie's programming assignment of Algorithms online class offered by Stanford University. It's NOT PERFECT and has not benn finished.
+
+Courses can be found in [Coursera](https://www.coursera.org/learn/algorithms-graphs-data-structures) which is part II of [specializations of algorithms](https://www.coursera.org/specializations/algorithms).
+
+The programming assignment of Part I of the specialization is [here](https://github.com/RuoChen95/algorithms-divide-conquer).
 
 ## Course list
 
@@ -29,8 +33,8 @@ In graph of djData.txt, the shortest-path distances from 1 to 7,37,59,82,99,115,
 
 ## Design of the code
 1. Read the data from txt file using fs;
-2. formating data;
-3. using specific algorisms to finish problem;
+2. Format data;
+3. Using specific algorithms to finish problem;
 
 ## How to run it
 1. install node.js
