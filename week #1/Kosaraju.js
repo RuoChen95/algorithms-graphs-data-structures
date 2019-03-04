@@ -1,11 +1,10 @@
-// breadth-first search
-
 let rs = require("fs");
 
 // let data = rs.readFileSync("SCC.txt","utf-8");
-// let G = data.split('\n');
-let data = rs.readFileSync("testcase_1.txt","utf-8");
-let G = data.split('\n\n');
+
+let data = rs.readFileSync("SCC_small.txt","utf-8");
+
+let G = data.split('\n');
 
 for (let i = 0; i < G.length; i++) {
   G[i] = G[i].split(' ').map(function (n, index) {
@@ -13,7 +12,6 @@ for (let i = 0; i < G.length; i++) {
   })
 }
 
-console.log('边：',G)
 
 let pivotArray = [];
 for (let i = 0; i < G.length; i ++) {
@@ -24,8 +22,6 @@ for (let i = 0; i < G.length; i ++) {
     pivotArray.push(G[i][1])
   }
 }
-console.log('顶点数量：', pivotArray.length);
-console.log('最大的顶点数量：', pivotArray.sort((a, b) => a - b)[pivotArray.length-1]);
 
 let exposedVertex = [];
 let orderList = [];
@@ -89,7 +85,6 @@ exposedVertex = [];
 DFS_loop(newG);
 
 
-console.log(leaderArray)
 let results = [];
 for (let i = 1; i < leaderArray.length; i++) {
   if(results[leaderArray[i]] == undefined) {
@@ -103,4 +98,5 @@ results = results.filter(function(n) {
     return Number(n)
   }
 });
-console.log('结果：', results.sort((a, b) => a - b).reverse());
+console.log('In graph of SCC_small, the sizes of the five largest SCCs is:')
+console.log(results.sort((a, b) => a - b).reverse().toString());

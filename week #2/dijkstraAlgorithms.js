@@ -1,6 +1,6 @@
 let rs = require("fs");
 
-let data = rs.readFileSync("dijkstraData.txt","utf-8");
+let data = rs.readFileSync("djData.txt","utf-8");
 // let data = rs.readFileSync("testCase.txt","utf-8");
 
 let array = data.split('\n');
@@ -27,8 +27,6 @@ inputEdges = inputEdges.map(function (n) {
     return parseInt(m)
   })
 })
-console.log('inputVertices', inputVertices)
-console.log('inputEdges', inputEdges)
 
 /*
 **** Dijkstra's Algorithm ****
@@ -65,14 +63,13 @@ while (X.length !== inputVertices.length) {
   A[edge[1]] = A[edge[0]] + edge[2];
 }
 
-console.log('A', A);
-
 let question = [7,37,59,82,99,115,133,165,188,197];
-let answer = []
+let answer = [];
 question.forEach(function(n) {
   answer.push(A[n])
-})
+});
 
+console.log('In graph of djData.txt, the shortest-path distances from 1 to 7,37,59,82,99,115,133,165,188,197 is: ')
 console.log(answer.toString())
 
 // heap的实现
