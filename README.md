@@ -4,7 +4,7 @@ This is Ruochen Xie's programming assignment of Algorithms online class offered 
 
 Courses can be found in [Coursera](https://www.coursera.org/learn/algorithms-graphs-data-structures) which is part II of [specializations of algorithms](https://www.coursera.org/specializations/algorithms).
 
-The programming assignment of Part I of the specialization is [here](https://github.com/RuoChen95/algorithms-divide-conquer).
+My programming assignment of Part I of the specialization is [here](https://github.com/RuoChen95/algorithms-divide-conquer).
 
 ## Course list
 
