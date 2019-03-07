@@ -22,19 +22,30 @@ The programming assignment of Part I of the specialization is [here](https://git
   
 ## Example of output
 ```
-// week #1 directory
+// in week #1 directory
+$ node Kosaraju.js
 In graph of SCC_small, the sizes of the five largest SCCs is:
 6,3,2,1
 
-// week #2 directory
+// in week #2 directory
+$ node dijkstraAlgorithms.js
 In graph of djData.txt, the shortest-path distances from 1 to 7,37,59,82,99,115,133,165,188,197 is: 
 2599,2610,2947,2052,2367,2399,2029,2442,2505,3068
+
+// in week #3 directory
+$ npm install heap
+$ node heap.js
+In data of Median.txt, sum of these medians, modulo 10000 is: 
+1213
 ```
 
 ## Design of the code
 1. Read the data from txt file using fs;
 2. Format data;
-3. Using specific algorithms to finish problem;
+3. Use specific algorithms to finish problems:
+    1. Kosaraju's Two-Pass Algorithm
+    2. Dijkstra's Algorithm
+    3. Heap Application: Median Maintenence
 
 ## How to run it
 1. install node.js
