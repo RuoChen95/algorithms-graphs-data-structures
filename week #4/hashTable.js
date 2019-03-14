@@ -37,4 +37,5 @@ array.forEach(function(n) {
   }
 })
 
+console.log(sumList);
 console.log(num);

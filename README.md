@@ -37,6 +37,10 @@ $ npm install heap
 $ node heap.js
 In data of Median.txt, sum of these medians, modulo 10000 is: 
 1213
+
+// in week #4 directory
+the number of sum between -10000 to 10000 is: (not repeat)
+427
 ```
 
 ## Design of the code
@@ -46,9 +50,9 @@ In data of Median.txt, sum of these medians, modulo 10000 is:
     1. Kosaraju's Two-Pass Algorithm
     2. Dijkstra's Algorithm
     3. Heap Application: Median Maintenence
+    4. Hashing (* still have some speed problem *)
 
 ## How to run it
 1. install node.js
 2. cd to the specific directory, read the README.md file
 3. using `node [filename]`to run the js file
-
