@@ -13,13 +13,10 @@ array = array.map(function (n) {
   return parseInt(n)
 });
 
-console.log(array.length);
-
 theArray = array.sort(function(a, b) {
   return a - b
 });
 
-console.log(theArray[0] + theArray[theArray.length - 1])
 
 // Coded by Mykhailo Dorokhin
 // source: https://www.coursera.org/learn/algorithms-graphs-data-structures/discussions/weeks/4/threads/oDdtZLcSEeaYHgpNzSKpMA#8569149~wQ9FD3b0EeaahA7WQe-h_w~DiRIqsb3EeeaSxJ_5wiJJg-post-legend
