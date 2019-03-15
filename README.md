@@ -10,6 +10,8 @@ Courses can be found in [Coursera](https://www.coursera.org/learn/algorithms-gra
 
 My programming assignment of Part I of the specialization is [here](https://github.com/RuoChen95/algorithms-divide-conquer).
 
+My credentials: https://www.coursera.org/account/accomplishments/certificate/Q8KEBDEUEV4K
+
 ## Course list
 
 - Week 5:
@@ -51,10 +53,10 @@ the number of sum between -10000 to 10000 is: (not repeat)
 1. Read the data from txt file using fs;
 2. Format data;
 3. Use specific algorithms to finish problems:
-    1. Kosaraju's Two-Pass Algorithm
-    2. Dijkstra's Algorithm
-    3. Heap Application: Median Maintenence
-    4. Hashing (* still have some speed problem *)
+    1. SCC: Kosaraju's Two-Pass Algorithm(* still have some speed problem *)
+    2. Shortest-path: Dijkstra's Algorithm
+    3. Median Maintenance: Heap Application
+    4. 2-SUM problem: Hashing Application(* still have some speed problem *)
 
 ## How to run it
 1. install node.js
