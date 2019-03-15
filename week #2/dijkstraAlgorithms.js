@@ -31,6 +31,10 @@ inputEdges = inputEdges.map(function (n) {
 /*
 **** Dijkstra's Algorithm ****
 *
+* 基本就是一种强制的遍历：
+* 已经获取最短路径的集合中的任意一点（v）+ 没有获取最短路径的集合中的和v相连的w
+* 取最小值
+*
 */
 let X = [];
 let A = [];

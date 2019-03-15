@@ -2,6 +2,10 @@
 
 This is Ruochen Xie's programming assignment of Algorithms online class offered by Stanford University. It's NOT PERFECT and has not benn finished.
 
+IMPORTANT:
+1. In week #1, the Kosaraju.js can only deal with smaller input graph and need improvements.
+2. In week #4, the hashTable.js can only deal with smaller input array and need improvements.
+
 Courses can be found in [Coursera](https://www.coursera.org/learn/algorithms-graphs-data-structures) which is part II of [specializations of algorithms](https://www.coursera.org/specializations/algorithms).
 
 My programming assignment of Part I of the specialization is [here](https://github.com/RuoChen95/algorithms-divide-conquer).

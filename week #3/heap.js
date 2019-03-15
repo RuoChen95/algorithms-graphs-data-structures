@@ -17,6 +17,10 @@ array = array.map(function (n) {
 1. maintain heaps heapLow and heapHigh
 2. maintain invariant that i/2 smallest(largest) elements in heapLow and heapHigh(*)
 3. choose median number from heapLow's max number of heapHigh's min number
+
+1. 建立两个堆：数字偏小的堆heapLow和数字偏大的堆heapHigh
+2. 保证这两个堆的数量差距没有超过1
+3. 如果要获取中位数，输出heapLow的最大值或者heapHigh的最小值
 */
 let heapLow = new Heap(function(a, b) {
   return b - a;
