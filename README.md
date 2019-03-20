@@ -25,29 +25,6 @@ My credentials: https://www.coursera.org/account/accomplishments/certificate/Q8K
   - 14: Hashing: the Basics
   - 15: Universal Hashing
   - 16: Bloom Filters
-  
-## Example of output
-```
-// in week #1 directory
-$ node Kosaraju.js
-In graph of SCC_small, the sizes of the five largest SCCs is:
-6,3,2,1
-
-// in week #2 directory
-$ node dijkstraAlgorithms.js
-In graph of djData.txt, the shortest-path distances from 1 to 7,37,59,82,99,115,133,165,188,197 is: 
-2599,2610,2947,2052,2367,2399,2029,2442,2505,3068
-
-// in week #3 directory
-$ npm install heap
-$ node heap.js
-In data of Median.txt, sum of these medians, modulo 10000 is: 
-1213
-
-// in week #4 directory
-the number of sum between -10000 to 10000 is: (not repeat)
-427
-```
 
 ## Design of the code
 1. Read the data from txt file using fs;
