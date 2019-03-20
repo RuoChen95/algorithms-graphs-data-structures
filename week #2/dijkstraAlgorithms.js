@@ -1,5 +1,4 @@
 let rs = require("fs");
-let Heap = require('heap');
 
 let data = rs.readFileSync("djData.txt","utf-8");
 // let data = rs.readFileSync("testCase.txt","utf-8");
@@ -29,9 +28,6 @@ inputEdges = inputEdges.map(function (n) {
   })
 });
 
-let heapLow = new Heap(function(a, b) {
-  return b - a;
-});
 /*
 **** Dijkstra's Algorithm ****
 *
@@ -50,22 +46,26 @@ A[s] = 0;
 
 let edge = [];
 
-console.time('time')
-while (X.length !== inputVertices.length) {
+function getEdge() {
   for (let i = 0; i < inputEdges.length; i++) {
     if (X.indexOf(inputEdges[i][0]) >= 0 && X.indexOf(inputEdges[i][1]) === -1) {
-
-      // 计算最小值 => heap
-      heapLow.push(inputEdges[i])
+      return inputEdges[i]
     }
   }
-  edge = heapLow.peek();
+}
+
+console.time('time')
+while (X.length !== inputVertices.length) {
+  edge = getEdge();
+  for (let i = 0; i < inputEdges.length; i++) {
+    if (X.indexOf(inputEdges[i][0]) >= 0 && X.indexOf(inputEdges[i][1]) === -1) {
+      if (A[inputEdges[i][0]] + inputEdges[i][2] < A[edge[0]] + edge[2]) {
+        edge = inputEdges[i]
+      }
+    }
+  }
   X.push(edge[1]);
   A[edge[1]] = A[edge[0]] + edge[2];
-
-  heapLow = new Heap(function(a, b) {
-    return b - a;
-  });
 }
 
 let question = [7,37,59,82,99,115,133,165,188,197];
@@ -75,6 +75,7 @@ question.forEach(function(n) {
 });
 
 
-console.log('In graph of djData.txt, the shortest-path distances from 1 to 7,37,59,82,99,115,133,165,188,197 is: ');
+console.log('In graph of djData.txt, the shortest-path distances from 1 to 7,37,59,82,99,115,133,165,188,197 is: ')
 console.log(answer.toString());
-console.timeEnd('time');
+
+// heap的实现
