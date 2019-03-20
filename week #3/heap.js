@@ -1,5 +1,5 @@
 let rs = require("fs");
-var Heap = require('heap');
+let Heap = require('heap');
 
 let data = rs.readFileSync("Median.txt","utf-8");
 let array = data.split('\r\n');
